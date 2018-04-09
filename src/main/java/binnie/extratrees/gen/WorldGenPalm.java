@@ -19,10 +19,10 @@ public class WorldGenPalm
 			this.generateTreeTrunk(this.height, this.girth);
 			float leafSpawn = this.height;
 			float width = this.height * this.randBetween(0.35f, 0.4f);
-			if (width < 1.2) {
+			if (width < 1.2f) {
 				width = 1.55f;
 			}
-			final float f = 0.0f;
+			/*final float f = 0.0f;
 			final float h = leafSpawn;
 			leafSpawn = h - 1.0f;
 			this.generateCylinder(new Vector(f, h, 0.0f), width - 1.0f, 1, this.leaf, false);
@@ -32,8 +32,8 @@ public class WorldGenPalm
 			this.generateCylinder(new Vector(f2, h2, 0.0f), width, 1, this.leaf, false);
 			final float f3 = 0.0f;
 			final float h3 = leafSpawn;
-			leafSpawn = h3 - 1.0f;
-			this.generateCylinder(new Vector(f3, h3, 0.0f), width - 0.6f, 1, this.leaf, false);
+			leafSpawn = h3 - 1.0f;*/
+			this.generateCylinder(new Vector(0.0f, leafSpawn, 0.0f), width - 0.6f, 1, this.leaf, false);
 		}
 
 		@Override

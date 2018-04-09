@@ -185,17 +185,17 @@ public enum ExtraTreeSpecies implements IAlleleTreeSpecies, IIconProvider, IGerm
 
 	private LeafType leafType;
 	private SaplingType saplingType;
-	ArrayList<IFruitFamily> families;
-	int girth;
-	Class<? extends WorldGenerator> gen;
-	IAlleleFruit fruit;
-	IAllele[] template;
-	int color;
-	String binomial;
-	String uid;
-	ILogType wood;
-	String branchName;
-	IClassification branch;
+	protected ArrayList<IFruitFamily> families;
+	protected int girth;
+	protected Class<? extends WorldGenerator> gen;
+	protected IAlleleFruit fruit;
+	protected IAllele[] template;
+	protected int color;
+	protected String binomial;
+	protected String uid;
+	protected ILogType wood;
+	protected String branchName;
+	protected IClassification branch;
 
 	public static void init() {
 		final String bookArborist = "Arborist Manual";
@@ -521,7 +521,7 @@ public enum ExtraTreeSpecies implements IAlleleTreeSpecies, IIconProvider, IGerm
 		ExtraTreeSpecies.Gooseberry.setHeight(ForestryAllele.TreeHeight.Smallest).setFertility(ForestryAllele.Saplings.High).setYield(ForestryAllele.Yield.High).setMaturation(ForestryAllele.Maturation.Faster);
 		ExtraTreeSpecies.GoldenRaspberry.setHeight(ForestryAllele.TreeHeight.Smaller).setFertility(ForestryAllele.Saplings.Low).setYield(ForestryAllele.Yield.Average).setSappiness(ForestryAllele.Sappiness.Lower).setMaturation(ForestryAllele.Maturation.Fastest);
 		ExtraTreeSpecies.Cinnamon.setHeight(ForestryAllele.TreeHeight.Average).setYield(ForestryAllele.Yield.Lower).setMaturation(ForestryAllele.Maturation.Fast);
-		ExtraTreeSpecies.Coconut.setHeight(ForestryAllele.TreeHeight.Smaller).setFertility(ForestryAllele.Saplings.Low).setYield(ForestryAllele.Yield.Average).setMaturation(ForestryAllele.Maturation.Fast);
+		ExtraTreeSpecies.Coconut.setHeight(ForestryAllele.TreeHeight.Larger).setFertility(ForestryAllele.Saplings.Low).setYield(ForestryAllele.Yield.Average).setMaturation(ForestryAllele.Maturation.Fast);
 		ExtraTreeSpecies.Cashew.setYield(ForestryAllele.Yield.Low);
 		ExtraTreeSpecies.Avacado.setHeight(ForestryAllele.TreeHeight.Smallest).setYield(ForestryAllele.Yield.Average);
 		ExtraTreeSpecies.Nutmeg.setHeight(ForestryAllele.TreeHeight.Smaller).setYield(ForestryAllele.Yield.High).setSappiness(ForestryAllele.Sappiness.Low);
@@ -714,7 +714,7 @@ public enum ExtraTreeSpecies implements IAlleleTreeSpecies, IIconProvider, IGerm
 	public WorldGenerator getGenerator(final ITreeGenData tree) {
 		if (this.gen != null) {
 			try {
-				return this.gen.getConstructor(ITree.class).newInstance(tree);
+				return this.gen.getConstructor(ITreeGenData.class).newInstance(tree);
 			} catch (Exception ex) {
 			}
 		}
