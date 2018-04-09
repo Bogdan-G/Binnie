@@ -83,7 +83,7 @@ public class Sequencer
 			transfer.addRestock(Sequencer.slotReserve, 5, 1);
 			new ComponentChargedSlots(machine).addCharge(0);
 			new ComponentPowerReceptor(machine, 10000);
-			new ComponentSequencerLogic(machine);
+			transfer.transferListener = new ComponentSequencerLogic(machine);
 			new ComponentSequencerFX(machine);
 		}
 
@@ -145,7 +145,7 @@ public class Sequencer
 		}
 
 		@Override
-		protected void onStartTask() {
+		public void onStartTask() {
 			super.onStartTask();
 			final ItemStack item = this.getUtil().getStack(5);
 			final SequencerItem seqItem = new SequencerItem(item);

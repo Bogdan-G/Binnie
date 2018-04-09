@@ -101,7 +101,7 @@ public abstract class ComponentProcessIndefinate extends MachineComponent implem
 	protected void onCancelTask() {
 	}
 
-	protected void onStartTask() {
+	public void onStartTask() {
 	}
 
 	protected void onTickTask() {

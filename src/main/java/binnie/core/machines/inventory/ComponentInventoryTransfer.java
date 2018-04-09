@@ -4,6 +4,7 @@
 
 package binnie.core.machines.inventory;
 
+import binnie.core.machines.power.ComponentProcessIndefinate;
 import binnie.core.machines.transfer.TransferRequest;
 import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.IInventory;
@@ -15,6 +16,7 @@ import binnie.core.machines.MachineComponent;
 public class ComponentInventoryTransfer extends MachineComponent
 {
 	private List<Transfer> transfers;
+	public ComponentProcessIndefinate transferListener;
 
 	public ComponentInventoryTransfer(final IMachine machine) {
 		super(machine);
@@ -105,6 +107,9 @@ public class ComponentInventoryTransfer extends MachineComponent
 						final ItemStack newStack = inv.decrStackSize(i, this.limit);
 						if (newStack != null) {
 							inv.setInventorySlotContents(this.destination, newStack);
+							if (transferListener != null) {
+								transferListener.onStartTask();
+							}
 							return;
 						}
 					}

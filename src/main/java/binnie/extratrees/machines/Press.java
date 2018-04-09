@@ -151,7 +151,7 @@ public class Press
 		}
 
 		@Override
-		protected void onStartTask() {
+		public void onStartTask() {
 			super.onStartTask();
 			this.lastProgress = 0;
 		}

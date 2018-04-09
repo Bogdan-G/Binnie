@@ -27,7 +27,7 @@ public abstract class ComponentProcess extends ComponentProcessIndefinate implem
 	}
 
 	@Override
-	protected void onStartTask() {
+	public void onStartTask() {
 		this.progressAmount += 0.01f;
 	}
 
