@@ -218,6 +218,10 @@ public class Inoculator
 			if (this.getUtil().isSlotEmpty(0)) {
 				return new ErrorState.NoItem("No Serum", 0);
 			}
+			if (this.getUtil().isTankEmpty(0)) {
+				return new ErrorState.InsufficientLiquid("Not enough liquid", 0);
+ 			}
+
 			final ErrorState state = this.isValidSerum();
 			if (state != null) {
 				return state;
@@ -365,10 +369,10 @@ public class Inoculator
 			if (stack == null) {
 				return;
 			}
-			final EntityPlayer player = BinnieCore.proxy.getPlayer();
+			/*final EntityPlayer player = BinnieCore.proxy.getPlayer();
 			final double dx = x + 0.5 - player.lastTickPosX;
 			final double dz = z + 0.5 - player.lastTickPosZ;
-			final double t = Math.atan2(dz, dx) * 180.0 / 3.1415;
+			final double t = Math.atan2(dz, dx) * 180.0 / 3.1415;*/
 			GL11.glPushMatrix();
 			GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
 			GL11.glTranslatef(0.0f, -0.25f, 0.0f);
