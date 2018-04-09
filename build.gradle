@@ -17,12 +17,12 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0"
+version = "2.0-pre14"
 group= "binnie" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "binnie"
 
 minecraft {
-    version = "1.7.10-10.13.4.1558-1.7.10"
+    version = "1.7.10-10.13.4.1614-1.7.10"
 	if (file('../run').exists()){
 		assetDir = "../run/assets"
 	}else{
