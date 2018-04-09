@@ -17,8 +17,12 @@ import forestry.api.arboriculture.EnumWoodType;
 import forestry.arboriculture.tiles.TileWood;
 import binnie.core.block.TileEntityMetadata;
 
+import sun.reflect.ReflectionFactory;
+
+import java.lang.reflect.Constructor;
+
 public class FakeWorld extends World {
-	public static FakeWorld instance = new FakeWorld();
+	public static FakeWorld instance = SilentObjectCreator.create(FakeWorld.class);
 	Block block;
 	int metadata;
 	TileEntity te;
@@ -32,7 +36,8 @@ public class FakeWorld extends World {
 		return null;
 	}
 
-	public FakeWorld() {
+	//It is never called.
+	private FakeWorld() {
 		super((SaveHandler) null, "", (WorldProvider) null, new WorldSettings(Long.MAX_VALUE, GameType.NOT_SET, false, false, WorldType.FLAT), null);
 	}
 
@@ -102,4 +107,32 @@ public class FakeWorld extends World {
 		return null;
 	}
 
+	public static class SilentObjectCreator {
+		/**
+		 * Creating objects without calling constructors.
+		 */
+		public static <T> T create(Class<T> clazz) {
+			return create(clazz, Object.class);
+		}
+
+		/**
+		 * Creating objects without calling constructors.
+		 */
+		public static <T> T create(Class<T> clazz,
+		                           Class<? super T> parent) {
+			try {
+				ReflectionFactory rf =
+						ReflectionFactory.getReflectionFactory();
+				Constructor objDef = parent.getDeclaredConstructor();
+				Constructor intConstr = rf.newConstructorForSerialization(
+						clazz, objDef
+				);
+				return clazz.cast(intConstr.newInstance());
+			} catch (RuntimeException e) {
+				throw e;
+			} catch (Exception e) {
+				throw new IllegalStateException("Cannot create object", e);
+			}
+		}
+	}
 }
