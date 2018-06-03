@@ -204,7 +204,7 @@ public class BlockETDoor extends BlockDoor implements IBlockMetadata
 		if ((blockMeta & 0x08) != 0) {
 			yCoord -= 1;
 		}
-		return BlockMetadata.getBlockDropped(this, world, x, y, z, blockMeta);
+		return BlockMetadata.getBlockDropped(this, world, x, yCoord, z, blockMeta);
 	}
 
 	@Override
