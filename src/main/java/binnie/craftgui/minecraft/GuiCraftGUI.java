@@ -395,9 +395,10 @@ public class GuiCraftGUI extends GuiContainer
 
 	private void renderItem(final IPoint pos, final ItemStack item, final int zLevel, final boolean rotating) {
 		OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0f, 240.0f);
-		GL11.glPushMatrix();
+		//GL11.glPushMatrix();
+		GL11.glPushAttrib(8256);
 		RenderHelper.enableGUIStandardItemLighting();
-		GL11.glEnable(32826);
+		//GL11.glEnable(32826);
 		GL11.glEnable(2929);
 		FontRenderer font = item.getItem().getFontRenderer(item);
 		if (font == null) {
@@ -406,23 +407,29 @@ public class GuiCraftGUI extends GuiContainer
 		if (item != null) {
 			BinnieCore.proxy.getMinecraftInstance();
 			final float phase = Minecraft.getSystemTime() / 20.0f;
-			GL11.glPushMatrix();
+			//GL11.glPushMatrix();
 			if (rotating) {
+				GL11.glPushMatrix();
 				GL11.glTranslatef(8.0f, 8.0f, 0.0f);
 				GL11.glRotatef(phase, 0.0f, -0.866f, 0.5f);
 				GL11.glTranslatef(-8.0f, -8.0f, -67.1f);
 			}
 			GuiScreen.itemRender.renderItemAndEffectIntoGUI(font, this.mc.renderEngine, item, (int) pos.x(), (int) pos.y());
-			GL11.glPopMatrix();
+			if (rotating) {
+				GL11.glPopMatrix();
+			}
 			GuiScreen.itemRender.renderItemOverlayIntoGUI(font, this.mc.renderEngine, item, (int) pos.x(), (int) pos.y(), (String) null);
 		}
-		GL11.glClear(256);
+		/*GL11.glClear(256);
 		GL11.glEnable(3042);
-		OpenGlHelper.glBlendFunc(770, 771, 1, 0);
+		OpenGlHelper.glBlendFunc(770, 771, 1, 0);*/
+
+		GL11.glDisable(GL11.GL_BLEND);
 		RenderHelper.disableStandardItemLighting();
-		CraftGUI.Render.colour(-1);
+		/*CraftGUI.Render.colour(-1);
 		GL11.glEnable(32826);
-		GL11.glPopMatrix();
+		GL11.glPopMatrix();*/
+		GL11.glPopAttrib();
 	}
 
 	public void renderIcon(final IPoint pos, final IIcon icon, final ResourceLocation map) {
@@ -490,8 +497,9 @@ public class GuiCraftGUI extends GuiContainer
 		final float f5 = (p_73734_4_ >> 8 & 0xFF) / 255.0f;
 		final float f6 = (p_73734_4_ & 0xFF) / 255.0f;
 		final Tessellator tessellator = Tessellator.instance;
-		GL11.glEnable(3042);
+		//GL11.glEnable(3042);
 		GL11.glDisable(3553);
+		GL11.glEnable(GL11.GL_BLEND);
 		OpenGlHelper.glBlendFunc(770, 771, 1, 0);
 		GL11.glColor4f(f4, f5, f6, f3);
 		tessellator.startDrawingQuads();
@@ -500,7 +508,8 @@ public class GuiCraftGUI extends GuiContainer
 		tessellator.addVertex(p_73734_2_, p_73734_1_, 0.0);
 		tessellator.addVertex(p_73734_0_, p_73734_1_, 0.0);
 		tessellator.draw();
-		GL11.glEnable(3553);
+		//GL11.glEnable(3553);
 		GL11.glDisable(3042);
+		GL11.glEnable(GL11.GL_TEXTURE_2D);
 	}
 }
