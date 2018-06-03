@@ -54,7 +54,7 @@ import cpw.mods.fml.common.SidedProxy;
 import binnie.core.proxy.BinnieProxy;
 import cpw.mods.fml.common.Mod;
 
-@Mod(modid = "BinnieCore", name = "Binnie Core", useMetadata = true)
+@Mod(modid = "BinnieCore", name = "Binnie Core", useMetadata = true, dependencies = "after:Forestry@[4.2,)")
 public final class BinnieCore extends AbstractMod
 {
 	@Mod.Instance("BinnieCore")
