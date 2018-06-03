@@ -140,7 +140,9 @@ public class ContainerCraftGUI extends Container
 	@Override
 	public boolean canInteractWith(final EntityPlayer var1) {
 		if (var1 instanceof EntityPlayerMP) {
-			this.crafters.add(var1);
+			if (!this.crafters.contains(var1)) {
+				this.crafters.add(var1);
+			}
 			this.sentNBT.clear();
 		}
 		IInventory inventory = this.window.getInventory();
