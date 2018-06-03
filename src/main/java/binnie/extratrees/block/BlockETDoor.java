@@ -190,21 +190,61 @@ public class BlockETDoor extends BlockDoor implements IBlockMetadata
 		return (i1 & 0x7) | (flag ? 8 : 0) | (flag2 ? 16 : 0);
 	}
 
-	@Override
+	/*@Override
 	@SideOnly(Side.CLIENT)
 	public void onBlockHarvested(final World par1World, final int par2, final int par3, final int par4, final int par5, final EntityPlayer par6EntityPlayer) {
 		if (par6EntityPlayer.capabilities.isCreativeMode && (par5 & 0x8) != 0x0 && par1World.getBlock(par2, par3 - 1, par4) == this) {
 			par1World.setBlockToAir(par2, par3 - 1, par4);
 		}
-	}
+	}*/
+
+	public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
+		int meta = world.getBlockMetadata(x, y, z);
+		if ((meta & 8) == 0) {
+			boolean flag = false;
+			if (world.getBlock(x, y + 1, z) != this) {
+				world.setBlockToAir(x, y, z);
+				flag = true;
+			}
+
+			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z)) {
+				flag = true;
+			}
+			
+			if (flag) {
+				if (!world.isRemote) {
+					dropBlockAsItem(world, x, y, z, meta, 0);
+				}
+			} else {
+				boolean flag1 = world.isBlockIndirectlyGettingPowered(x, y, z) || world.isBlockIndirectlyGettingPowered(x, y + 1, z);
+				if ((flag1 || block.canProvidePower()) && block != this) {
+					func_150014_a(world, x, y, z, flag1);
+				}
+			}
+
+			if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z)) {
+				world.setBlockToAir(x, y, z);
+				if (world.getBlock(x, y + 1, z) == this) {
+					world.setBlockToAir(x, y + 1, z);
+				}
+			}
+		} else {
+			if (world.getBlock(x, y - 1, z) != this) {
+				world.setBlockToAir(x, y, z);
+			}
+
+			if (block != this) {
+				onNeighborBlockChange(world, x, y - 1, z, block);
+			}
+ 		}
+ 	}
 
 	@Override
 	public ArrayList<ItemStack> getDrops(final World world, final int x, final int y, final int z, final int blockMeta, final int fortune) {
-		int yCoord = y;
 		if ((blockMeta & 0x08) != 0) {
-			yCoord -= 1;
+			y -= 1;
 		}
-		return BlockMetadata.getBlockDropped(this, world, x, yCoord, z, blockMeta);
+		return BlockMetadata.getBlockDropped(this, world, x, y, z, blockMeta);
 	}
 
 	@Override
@@ -222,12 +262,12 @@ public class BlockETDoor extends BlockDoor implements IBlockMetadata
 		return true;
 	}
 
-	@Override
+	/*@Override
 	public boolean onBlockEventReceived(final World par1World, final int par2, final int par3, final int par4, final int par5, final int par6) {
 		super.onBlockEventReceived(par1World, par2, par3, par4, par5, par6);
 		final TileEntity tileentity = par1World.getTileEntity(par2, par3, par4);
 		return tileentity != null && tileentity.receiveClientEvent(par5, par6);
-	}
+	}*/
 
 	@Override
 	public int getPlacedMeta(final ItemStack stack, final World world, final int x, final int y, final int z, final ForgeDirection clickedBlock) {
@@ -277,10 +317,10 @@ public class BlockETDoor extends BlockDoor implements IBlockMetadata
 		}
 	}
 
-	@Override
+	/*@Override
 	public boolean isWood(final IBlockAccess world, final int x, final int y, final int z) {
 		return true;
-	}
+	}*/
 
 	@Override
 	public int getFlammability(final IBlockAccess world, final int x, final int y, final int z, final ForgeDirection face) {
@@ -297,14 +337,14 @@ public class BlockETDoor extends BlockDoor implements IBlockMetadata
 		return 5;
 	}
 
-	@Override
+	/*@Override
 	public void breakBlock(final World par1World, final int par2, final int par3, final int par4, final Block par5, final int par6) {
 		super.breakBlock(par1World, par2, par3, par4, par5, par6);
 		par1World.removeTileEntity(par2, par3, par4);
-	}
+	}*/
 
-	@Override
-	public ItemStack getPickBlock(final MovingObjectPosition target, final World world, final int x, final int y, final int z) {
+	//@Override
+	public ItemStack getPickBlock(final MovingObjectPosition target, final World world, final int x, final int y, final int z, EntityPlayer player) {
 		return BlockMetadata.getPickBlock(world, x, y, z);
 	}
 }
