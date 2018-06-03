@@ -101,6 +101,8 @@ public class ManagerGenetics extends ManagerBase
 	}
 
 	public BreedingSystem getSystem(final ISpeciesRoot root) {
+		// Fix NPE
+		if (root == null) return null;
 		return this.getSystem(root.getUID());
 	}
 
