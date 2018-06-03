@@ -35,7 +35,7 @@ public class WorldGenApple
 
 	public static class SweetCrabapple extends WorldGenTree
 	{
-		public SweetCrabapple(final ITree tree) {
+		public SweetCrabapple(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -61,7 +61,7 @@ public class WorldGenApple
 
 	public static class FloweringCrabapple extends WorldGenTree
 	{
-		public FloweringCrabapple(final ITree tree) {
+		public FloweringCrabapple(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -86,7 +86,7 @@ public class WorldGenApple
 
 	public static class PrairieCrabapple extends WorldGenTree
 	{
-		public PrairieCrabapple(final ITree tree) {
+		public PrairieCrabapple(final ITreeGenData tree) {
 			super(tree);
 		}
 

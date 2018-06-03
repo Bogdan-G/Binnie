@@ -47,7 +47,7 @@ public class WorldGenTree2
 
 	public static class Sweetgum extends WorldGenTree
 	{
-		public Sweetgum(final ITree tree) {
+		public Sweetgum(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -85,7 +85,7 @@ public class WorldGenTree2
 
 	public static class Locust extends WorldGenTree
 	{
-		public Locust(final ITree tree) {
+		public Locust(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -131,7 +131,7 @@ public class WorldGenTree2
 
 	public static class Pear extends WorldGenTree
 	{
-		public Pear(final ITree tree) {
+		public Pear(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -165,7 +165,7 @@ public class WorldGenTree2
 
 	public static class Iroko extends WorldGenTree
 	{
-		public Iroko(final ITree tree) {
+		public Iroko(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -209,7 +209,7 @@ public class WorldGenTree2
 
 	public static class Gingko extends WorldGenTree
 	{
-		public Gingko(final ITree tree) {
+		public Gingko(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -265,7 +265,7 @@ public class WorldGenTree2
 
 	public static class Box extends WorldGenTree
 	{
-		public Box(final ITree tree) {
+		public Box(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -292,7 +292,7 @@ public class WorldGenTree2
 
 	public static class Clove extends WorldGenTree
 	{
-		public Clove(final ITree tree) {
+		public Clove(final ITreeGenData tree) {
 			super(tree);
 		}
 

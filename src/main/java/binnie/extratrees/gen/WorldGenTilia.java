@@ -54,7 +54,7 @@ public class WorldGenTilia
 
 	public static class WhiteBasswood extends WorldGenTree
 	{
-		public WhiteBasswood(final ITree tree) {
+		public WhiteBasswood(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -97,7 +97,7 @@ public class WorldGenTilia
 
 	public static class CommonLime extends WorldGenTree
 	{
-		public CommonLime(final ITree tree) {
+		public CommonLime(final ITreeGenData tree) {
 			super(tree);
 		}
 

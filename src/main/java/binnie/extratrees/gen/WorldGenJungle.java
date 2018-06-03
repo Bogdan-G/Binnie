@@ -45,7 +45,7 @@ public class WorldGenJungle
 
 	public static class Logwood extends WorldGenTree
 	{
-		public Logwood(final ITree tree) {
+		public Logwood(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -83,7 +83,7 @@ public class WorldGenJungle
 
 	public static class Rosewood extends WorldGenTree
 	{
-		public Rosewood(final ITree tree) {
+		public Rosewood(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -125,7 +125,7 @@ public class WorldGenJungle
 
 	public static class Purpleheart extends WorldGenTree
 	{
-		public Purpleheart(final ITree tree) {
+		public Purpleheart(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -165,7 +165,7 @@ public class WorldGenJungle
 
 	public static class OsangeOsange extends WorldGenTree
 	{
-		public OsangeOsange(final ITree tree) {
+		public OsangeOsange(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -203,7 +203,7 @@ public class WorldGenJungle
 
 	public static class OldFustic extends WorldGenTree
 	{
-		public OldFustic(final ITree tree) {
+		public OldFustic(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -241,7 +241,7 @@ public class WorldGenJungle
 
 	public static class Coffee extends WorldGenTree
 	{
-		public Coffee(final ITree tree) {
+		public Coffee(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -279,7 +279,7 @@ public class WorldGenJungle
 
 	public static class BrazilNut extends WorldGenTree
 	{
-		public BrazilNut(final ITree tree) {
+		public BrazilNut(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -321,7 +321,7 @@ public class WorldGenJungle
 
 	public static class Shrub15 extends WorldGenTree
 	{
-		public Shrub15(final ITree tree) {
+		public Shrub15(final ITreeGenData tree) {
 			super(tree);
 		}
 

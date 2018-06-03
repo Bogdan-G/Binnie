@@ -57,7 +57,7 @@ public class WorldGenTree3
 
 	public static class Sycamore extends WorldGenTree
 	{
-		public Sycamore(final ITree tree) {
+		public Sycamore(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -99,7 +99,7 @@ public class WorldGenTree3
 
 	public static class Hawthorn extends WorldGenTree
 	{
-		public Hawthorn(final ITree tree) {
+		public Hawthorn(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -141,7 +141,7 @@ public class WorldGenTree3
 
 	public static class Pecan extends WorldGenTree
 	{
-		public Pecan(final ITree tree) {
+		public Pecan(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -191,7 +191,7 @@ public class WorldGenTree3
 
 	public static class Elm extends WorldGenTree
 	{
-		public Elm(final ITree tree) {
+		public Elm(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -233,7 +233,7 @@ public class WorldGenTree3
 
 	public static class Elder extends WorldGenTree
 	{
-		public Elder(final ITree tree) {
+		public Elder(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -279,7 +279,7 @@ public class WorldGenTree3
 
 	public static class Hornbeam extends WorldGenTree
 	{
-		public Hornbeam(final ITree tree) {
+		public Hornbeam(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -317,7 +317,7 @@ public class WorldGenTree3
 
 	public static class Sallow extends WorldGenTree
 	{
-		public Sallow(final ITree tree) {
+		public Sallow(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -367,7 +367,7 @@ public class WorldGenTree3
 
 	public static class AcornOak extends WorldGenTree
 	{
-		public AcornOak(final ITree tree) {
+		public AcornOak(final ITreeGenData tree) {
 			super(tree);
 		}
 

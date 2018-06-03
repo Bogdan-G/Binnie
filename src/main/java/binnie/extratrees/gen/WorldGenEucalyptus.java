@@ -70,7 +70,7 @@ public class WorldGenEucalyptus
 
 	public static class RoseGum extends WorldGenTree
 	{
-		public RoseGum(final ITree tree) {
+		public RoseGum(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -118,7 +118,7 @@ public class WorldGenEucalyptus
 
 	public static class RainbowGum extends WorldGenTree
 	{
-		public RainbowGum(final ITree tree) {
+		public RainbowGum(final ITreeGenData tree) {
 			super(tree);
 		}
 

@@ -33,7 +33,7 @@ public class WorldGenSorbus
 
 	public static class Rowan extends WorldGenTree
 	{
-		public Rowan(final ITree tree) {
+		public Rowan(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -53,7 +53,7 @@ public class WorldGenSorbus
 
 	public static class ServiceTree extends WorldGenTree
 	{
-		public ServiceTree(final ITree tree) {
+		public ServiceTree(final ITreeGenData tree) {
 			super(tree);
 		}
 

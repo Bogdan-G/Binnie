@@ -5,12 +5,13 @@
 package binnie.extratrees.gen;
 
 import forestry.api.arboriculture.ITree;
+import forestry.api.world.ITreeGenData;
 
 public class WorldGenShrub
 {
 	public static class Shrub extends WorldGenTree
 	{
-		public Shrub(final ITree tree) {
+		public Shrub(final ITreeGenData tree) {
 			super(tree);
 		}
 

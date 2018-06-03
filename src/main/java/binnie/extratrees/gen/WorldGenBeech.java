@@ -5,12 +5,13 @@
 package binnie.extratrees.gen;
 
 import forestry.api.arboriculture.ITree;
+import forestry.api.world.ITreeGenData;
 
 public class WorldGenBeech
 {
 	public static class CommonBeech extends WorldGenTree
 	{
-		public CommonBeech(final ITree tree) {
+		public CommonBeech(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -47,7 +48,7 @@ public class WorldGenBeech
 
 	public static class CopperBeech extends CommonBeech
 	{
-		public CopperBeech(final ITree tree) {
+		public CopperBeech(final ITreeGenData tree) {
 			super(tree);
 		}
 	}

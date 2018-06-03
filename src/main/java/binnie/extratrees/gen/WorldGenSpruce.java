@@ -50,7 +50,7 @@ public class WorldGenSpruce
 
 	public static class AlpineSpruce extends WorldGenTree
 	{
-		public AlpineSpruce(final ITree tree) {
+		public AlpineSpruce(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -90,7 +90,7 @@ public class WorldGenSpruce
 
 	public static class WhiteSpruce extends WorldGenTree
 	{
-		public WhiteSpruce(final ITree tree) {
+		public WhiteSpruce(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -125,7 +125,7 @@ public class WorldGenSpruce
 
 	public static class BlackSpruce extends WorldGenTree
 	{
-		public BlackSpruce(final ITree tree) {
+		public BlackSpruce(final ITreeGenData tree) {
 			super(tree);
 		}
 

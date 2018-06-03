@@ -63,7 +63,7 @@ public class WorldGenFir
 
 	public static class SilverFir extends WorldGenTree
 	{
-		public SilverFir(final ITree tree) {
+		public SilverFir(final ITreeGenData tree) {
 			super(tree);
 		}
 
@@ -104,7 +104,7 @@ public class WorldGenFir
 
 	public static class BalsamFir extends WorldGenTree
 	{
-		public BalsamFir(final ITree tree) {
+		public BalsamFir(final ITreeGenData tree) {
 			super(tree);
 		}
 
