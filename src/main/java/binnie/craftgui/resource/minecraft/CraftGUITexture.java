@@ -12,6 +12,7 @@ public enum CraftGUITexture
 	PanelTinted("panel.tinted"),
 	ButtonDisabled("button.disabled"),
 	Button("button"),
+	ButtonSmall("buttonsmall"),
 	ButtonHighlighted("button.highlighted"),
 	Slot("slot"),
 	SlotBorder("slot.border"),

@@ -52,6 +52,12 @@
             "padding": "4"
         },
         {
+            "name": "buttonsmall",
+            "sheet": "controls",
+            "uv": "40 8 8 8",
+            "padding": "4"
+        },
+        {
             "name": "button.highlighted",
             "sheet": "controls",
             "uv": "56 4 20 20",
