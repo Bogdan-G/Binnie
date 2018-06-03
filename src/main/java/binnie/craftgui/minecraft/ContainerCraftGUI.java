@@ -47,6 +47,7 @@ public class ContainerCraftGUI extends Container
 	private int mousedOverSlotNumber;
 
 	public ContainerCraftGUI(final Window window) {
+		this.window = window;
 		this.syncedNBT = new HashMap<String, NBTTagCompound>();
 		this.sentNBT = new HashMap<String, NBTTagCompound>();
 		this.syncedTanks = new HashMap<Integer, TankInfo>();
@@ -55,7 +56,6 @@ public class ContainerCraftGUI extends Container
 		this.errorType = 0;
 		this.error = null;
 		this.mousedOverSlotNumber = -1;
-		this.window = window;
 		final IMachine machine = Machine.getMachine(window.getInventory());
 		if (this.getSide() == Side.SERVER) {
 			this.inventoryItemStacks = new ListMap();
@@ -138,7 +138,12 @@ public class ContainerCraftGUI extends Container
 
 	@Override
 	public boolean canInteractWith(final EntityPlayer var1) {
-		return true;
+		if (var1 instanceof EntityPlayerMP) {
+			this.crafters.add(var1);
+			this.sentNBT.clear();
+		}
+		IInventory inventory = this.window.getInventory();
+		return inventory == null || inventory.isUseableByPlayer(var1);
 	}
 
 	@Override
