@@ -16,6 +16,7 @@ import binnie.core.machines.power.IErrorStateSource;
 import binnie.core.machines.power.IPoweredMachine;
 import binnie.core.machines.power.ITankMachine;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.IInventory;
 import binnie.core.machines.transfer.TransferRequest;
 import net.minecraft.entity.player.EntityPlayer;
@@ -216,6 +217,11 @@ public class ContainerCraftGUI extends Container
 				final int index = action.getShort("i");
 				final int slotNumber = action.getShort("n");
 				this.getOrCreateSlot(InventoryType.values()[type % 4], index, slotNumber);
+
+				for (Object crafterObject : this.crafters) {
+					ICrafting crafter = (ICrafting) crafterObject;
+					crafter.sendContainerAndContentsToPlayer(this, getInventory());
+				}
 			}
 		}
 		if (name.contains("tank-update")) {
