@@ -116,7 +116,7 @@ public class PlankType
 		}
 	}
 
-	public enum VanillaPlanks implements IPlankType
+	public enum VanillaPlanks implements IPlankType, IFenceProvider
 	{
 		OAK(11833434),
 		SPRUCE(8412726),
@@ -159,6 +159,11 @@ public class PlankType
 				return block.getIcon(2, meta);
 			}
 			return null;
+		}
+
+		@Override
+		public ItemStack getFence() {
+			return TileEntityMetadata.getItemStack(ExtraTrees.blockFence, WoodManager.getPlankTypeIndex(this));
 		}
 	}
 

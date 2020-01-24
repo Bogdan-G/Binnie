@@ -50,6 +50,12 @@ public class BlockFence extends net.minecraft.block.BlockFence implements IBlock
 		for (final IFenceProvider type : PlankType.ExtraTreePlanks.values()) {
 			itemList.add(type.getFence());
 		}
+
+		for (IFenceProvider type : PlankType.VanillaPlanks.values()) {
+			if (type != PlankType.VanillaPlanks.OAK) {
+				itemList.add(type.getFence());
+			}
+		}
 	}
 
 	@Override
