@@ -32,10 +32,10 @@ public class WorldGenDefault extends WorldGenTree
 		this.girth = this.determineGirth(this.treeGen.getGirth(this.world, this.startX, this.startY, this.startZ));
 	}
 
-	@Override
+	/*@Override
 	public BlockType getLeaf() {
 		return new BlockTypeLeaf();
-	}
+	}*/
 
 	@Override
 	public BlockType getWood() {

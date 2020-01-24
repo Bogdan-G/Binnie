@@ -240,7 +240,7 @@ public class BlockETDoor extends BlockDoor implements IBlockMetadata
  	}
 
 	@Override
-	public ArrayList<ItemStack> getDrops(final World world, final int x, final int y, final int z, final int blockMeta, final int fortune) {
+	public ArrayList<ItemStack> getDrops(final World world, final int x, int y, final int z, final int blockMeta, final int fortune) {
 		if ((blockMeta & 0x08) != 0) {
 			y -= 1;
 		}

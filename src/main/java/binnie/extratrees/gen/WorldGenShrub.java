@@ -6,6 +6,12 @@ package binnie.extratrees.gen;
 
 import forestry.api.arboriculture.ITree;
 import forestry.api.world.ITreeGenData;
+import forestry.arboriculture.blocks.BlockForestryLeaves;
+import net.minecraft.block.Block;
+import net.minecraft.world.World;
+import binnie.extratrees.ExtraTrees;
+import binnie.extratrees.worldgen.BlockType;
+import binnie.extratrees.worldgen.BlockTypeLeaf;
 
 public class WorldGenShrub
 {
@@ -43,6 +49,11 @@ public class WorldGenShrub
 			this.minHeight = 1;
 			this.height = this.determineHeight(1, 1);
 			this.girth = this.determineGirth(this.treeGen.getGirth(this.world, this.startX, this.startY, this.startZ));
+		}
+
+		@Override
+		public BlockType getLeaf() {
+			return new BlockTypeLeaf(false);
 		}
 	}
 }
