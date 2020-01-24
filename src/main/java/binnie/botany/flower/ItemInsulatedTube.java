@@ -77,6 +77,7 @@ public class ItemInsulatedTube extends Item
 		this.icons = new IIcon[3];
 		this.setUnlocalizedName("insulatedTube");
 		this.setCreativeTab(CreativeTabBotany.instance);
+		this.setHasSubtypes(true);
 	}
 
 	public static String getInsulate(final ItemStack stack) {
