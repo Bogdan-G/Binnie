@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 import binnie.core.machines.component.IRender;
 import binnie.core.machines.MachineComponent;
 import binnie.core.machines.inventory.IChargedSlots;
+import binnie.core.machines.network.INetwork;
 import forestry.api.genetics.ISpeciesRoot;
 import binnie.Binnie;
 import forestry.api.genetics.AlleleManager;
@@ -108,7 +109,7 @@ public class Genepool
 		}
 	}
 
-	public static class ComponentGenepoolLogic extends ComponentProcessSetCost implements IProcess
+	public static class ComponentGenepoolLogic extends ComponentProcessSetCost implements IProcess, INetwork.TilePacketSync
 	{
 		float enzymePerProcess;
 		float ethanolPerProcess;
