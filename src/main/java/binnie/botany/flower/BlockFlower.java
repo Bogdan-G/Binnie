@@ -57,6 +57,11 @@ public class BlockFlower extends BlockContainer
 	}
 
 	@Override
+	public String getUnlocalizedName() {
+		return "botany.flower";
+	}
+
+	@Override
 	public TileEntity createNewTileEntity(final World var1, final int i) {
 		return new TileEntityFlower();
 	}
@@ -199,5 +204,11 @@ public class BlockFlower extends BlockContainer
 			}
 		}
 		return hasBeenBroken;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int meta, int side) {
+		return Blocks.yellow_flower.getIcon(0, 0);
 	}
 }
