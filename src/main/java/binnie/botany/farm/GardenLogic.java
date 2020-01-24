@@ -105,6 +105,23 @@ public class GardenLogic extends FarmLogic
 	private boolean maintainSoil(final int x2, final int y2, final int z2, final FarmDirection direction, final int extent) {
 		for (int i = 0; i < extent; ++i) {
 			final Vect position = this.translateWithOffset(x2, y2, z2, direction, i);
+
+			// remove unnecessary blocks
+			if (!isManual && !Gardening.isSoil(this.world.getBlock(position.x, position.y, position.z)) && !isAirBlock(position)) {
+				Block block = world.getBlock(position.x, position.y, position.z);
+				if (moisture == EnumMoisture.DAMP) {
+					if (block != Blocks.water) {
+						dropBlockAsProduction(position);
+					}
+				} else if (moisture == EnumMoisture.DRY) {
+					if (block != Blocks.sand) {
+						dropBlockAsProduction(position);
+					}
+				} else {
+					dropBlockAsProduction(position);
+				}
+			}
+
 			if (this.fertilised && Gardening.isSoil(this.world.getBlock(position.x, position.y, position.z))) {
 				final IBlockSoil soil = (IBlockSoil) this.world.getBlock(position.x, position.y, position.z);
 				if (soil.fertilise(this.world, position.x, position.y, position.z, EnumSoilType.FLOWERBED)) {
@@ -269,6 +286,15 @@ public class GardenLogic extends FarmLogic
 
 	public void setIcon(final ItemStack icon) {
 		this.icon = icon;
+	}
+
+	private void dropBlockAsProduction(Vect position) {
+		ItemStack stack = new ItemStack(world.getBlock(position.x, position.y, position.z));
+		if (stack.getItem() == null) {
+			return;
+		}
+		produce.add(stack);
+		world.setBlockToAir(position.x, position.y, position.z);
 	}
 
 	@Override
