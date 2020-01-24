@@ -111,7 +111,8 @@ public class AlvearyMutator
 		}
 
 		@Override
-		public void onPostQueenDeath(final IBee queen) {
+		public void onQueenDeath() {
+			super.onQueenDeath();
 			this.getUtil().decreaseStack(AlvearyMutator.slotMutator, 1);
 		}
 	}
