@@ -42,6 +42,7 @@ public class BlockPlant extends BlockBush
 		this.setBlockName("plant");
 		this.setCreativeTab(CreativeTabBotany.instance);
 		this.setTickRandomly(true);
+		this.setStepSound(Block.soundTypeGrass);
 	}
 
 	@Override
