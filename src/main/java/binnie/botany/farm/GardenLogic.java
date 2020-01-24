@@ -109,11 +109,11 @@ public class GardenLogic extends FarmLogic
 			// remove unnecessary blocks
 			if (!isManual && !Gardening.isSoil(this.world.getBlock(position.x, position.y, position.z)) && !isAirBlock(position)) {
 				Block block = world.getBlock(position.x, position.y, position.z);
-				if (moisture == EnumMoisture.DAMP) {
+				if (moisture == EnumMoisture.Damp) {
 					if (block != Blocks.water) {
 						dropBlockAsProduction(position);
 					}
-				} else if (moisture == EnumMoisture.DRY) {
+				} else if (moisture == EnumMoisture.Dry) {
 					if (block != Blocks.sand) {
 						dropBlockAsProduction(position);
 					}
