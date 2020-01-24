@@ -125,6 +125,14 @@ public class ModuleGardening implements IInitializable
 				GameRegistry.addShapelessRecipe(tubes, new Object[] { forestryTube, forestryTube, insulateStack });
 			}
 		}
+
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt), new ItemStack(Botany.soil, 1, OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt), new ItemStack(Botany.loam, 1, OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt), new ItemStack(Botany.flowerbed, 1, OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt), new ItemStack(Botany.soilNoWeed, 1, OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt), new ItemStack(Botany.loamNoWeed, 1, OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt), new ItemStack(Botany.flowerbedNoWeed, 1, OreDictionary.WILDCARD_VALUE));
+
 		GameRegistry.addRecipe(new ShapedOreRecipe((Item) Botany.trowelWood, new Object[] { "d  ", " x ", "  s", 'd', Blocks.dirt, 's', "stickWood", 'x', "plankWood" }));
 		GameRegistry.addRecipe(new ShapedOreRecipe((Item) Botany.trowelStone, new Object[] { "d  ", " x ", "  s", 'd', Blocks.dirt, 's', "stickWood", 'x', "cobblestone" }));
 		GameRegistry.addRecipe(new ShapedOreRecipe((Item) Botany.trowelIron, new Object[] { "d  ", " x ", "  s", 'd', Blocks.dirt, 's', "stickWood", 'x', "ingotIron" }));
