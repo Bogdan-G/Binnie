@@ -53,6 +53,7 @@ public class BlockFlower extends BlockContainer
 		this.setBlockBounds(0.5f - f, 0.0f, 0.5f - f, 0.5f + f, f * 3.0f, 0.5f + f);
 		this.setTickRandomly(true);
 		this.setBlockName("flower");
+		this.setStepSound(Block.soundTypeGrass);
 	}
 
 	@Override
