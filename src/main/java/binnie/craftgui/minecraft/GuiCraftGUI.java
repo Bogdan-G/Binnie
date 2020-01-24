@@ -424,7 +424,8 @@ public class GuiCraftGUI extends GuiContainer
 		GL11.glEnable(3042);
 		OpenGlHelper.glBlendFunc(770, 771, 1, 0);*/
 
-		GL11.glDisable(GL11.GL_BLEND);
+		//GL11.glDisable(GL11.GL_BLEND);
+		GL11.glClear(256);
 		RenderHelper.disableStandardItemLighting();
 		/*CraftGUI.Render.colour(-1);
 		GL11.glEnable(32826);
