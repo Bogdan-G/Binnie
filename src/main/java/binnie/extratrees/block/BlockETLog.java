@@ -135,8 +135,12 @@ public class BlockETLog extends BlockLog implements IBlockMetadata
 
 	@Override
 	public String getBlockName(final ItemStack par1ItemStack) {
-		final int meta = TileEntityMetadata.getItemDamage(par1ItemStack);
-		return Binnie.Language.localise(ExtraTrees.instance, "block.log.name", ILogType.ExtraTreeLog.values()[meta].getName());
+		int meta = TileEntityMetadata.getItemDamage(par1ItemStack);
+		ILogType.ExtraTreeLog[] logs= ILogType.ExtraTreeLog.values();
+		if(meta < 0 || meta >= logs.length) {
+			meta = 0;
+		}
+		return Binnie.Language.localise(ExtraTrees.instance, "block.log.name", logs[meta].getName());
 	}
 
 	@Override
