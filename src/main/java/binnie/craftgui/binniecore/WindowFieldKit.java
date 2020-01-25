@@ -211,6 +211,10 @@ public class WindowFieldKit extends Window
 		super.onWindowInventoryChanged();
 		if (this.isServer()) {
 			final ItemStack kit = this.getPlayer().getHeldItem();
+			if(kit == null || !kit.getItem().equals(BinnieCore.fieldKit)) {
+				return;
+			}
+
 			final int sheets = 64 - kit.getItemDamage();
 			final int size = (this.getWindowInventory().getStackInSlot(1) == null) ? 0 : this.getWindowInventory().getStackInSlot(1).stackSize;
 			if (sheets != size) {
